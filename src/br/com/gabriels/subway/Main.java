@@ -1,5 +1,6 @@
 package br.com.gabriels.subway;
 
+import static br.com.gabriels.subway.Molho.*;
 import static br.com.gabriels.subway.Pao.*;
 import static br.com.gabriels.subway.Queijo.*;
 import static br.com.gabriels.subway.Recheio.*;
@@ -11,7 +12,7 @@ public class Main {
                 .grande()
                 .comQueijo(PRATO)
                 .comVegetais(CEBOLA, ALFACE)
-                .comMolho(Molho.CHIPOTLE)
+                .comMolho(CHIPOTLE)
                 .build();
 
         System.out.println(lanche);
