@@ -10,7 +10,7 @@ public class Main {
         Lanche lanche = Lanche.umLanche(CHURRASCO, PARMESAO_OREGANO)
                 .grande()
                 .comQueijo(PRATO)
-                .comVegetais(CEBOLA, ALF    ACE)
+                .comVegetais(CEBOLA, ALFACE)
                 .comMolho(Molho.CHIPOTLE)
                 .build();
 
