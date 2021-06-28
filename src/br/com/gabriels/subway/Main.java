@@ -1,19 +1,12 @@
 package br.com.gabriels.subway;
 
-import static br.com.gabriels.subway.Lanche.LancheBuilder;
-import static br.com.gabriels.subway.Molho.CHIPOTLE;
-import static br.com.gabriels.subway.Pao.PARMESAO_OREGANO;
-import static br.com.gabriels.subway.Queijo.PRATO;
-import static br.com.gabriels.subway.Recheio.CHURRASCO;
-import static br.com.gabriels.subway.Vegetal.*;
-
 public class Main {
     public static void main(String[] args) {
-        Lanche lanche = new LancheBuilder(CHURRASCO, PARMESAO_OREGANO)
+        Lanche lanche = Lanche.umLanche(Recheio.CHURRASCO, Pao.PARMESAO_OREGANO)
                 .grande()
-                .comQueijo(PRATO)
-                .comVegetais(ALFACE, CEBOLA)
-                .comMolho(CHIPOTLE)
+                .comQueijo(Queijo.PRATO)
+                .comVegetais(Vegetal.CEBOLA, Vegetal.ALFACE)
+                .comMolho(Molho.CHIPOTLE)
                 .build();
 
         System.out.println(lanche);

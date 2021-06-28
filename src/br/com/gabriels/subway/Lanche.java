@@ -31,7 +31,11 @@ public class Lanche {
                 '}';
     }
 
-    static class LancheBuilder {
+    public static LancheBuilder umLanche(Recheio recheio, Pao pao) {
+        return new LancheBuilder(recheio, pao);
+    }
+
+    public static class LancheBuilder {
         private final Recheio recheio;
         private final Pao pao;
 
@@ -69,6 +73,7 @@ public class Lanche {
                     pao, tamanho, queijo);
         }
     }
+
 
     static class LancheQuartoPassoBuilder {
         private final Recheio recheio;
