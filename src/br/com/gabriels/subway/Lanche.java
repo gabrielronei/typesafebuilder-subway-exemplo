@@ -10,13 +10,13 @@ public class Lanche {
     private final List<Vegetal> vegetais;
     private final Molho molho;
 
-    public Lanche(Tamanho tamanho, Pao pao, Recheio recheio, Queijo queijo, List<Vegetal> vegetais, Molho molho) {
-        this.tamanho = tamanho;
-        this.pao = pao;
-        this.recheio = recheio;
-        this.queijo = queijo;
-        this.vegetais = vegetais;
-        this.molho = molho;
+    public Lanche(LancheBuilder lancheBuilder) {
+        this.tamanho = lancheBuilder.tamanho;
+        this.pao = lancheBuilder.pao;
+        this.recheio = lancheBuilder.recheio;
+        this.queijo = lancheBuilder.queijo;
+        this.vegetais = lancheBuilder.vegetais;
+        this.molho = lancheBuilder.molho;
     }
 
     @Override
@@ -29,6 +29,62 @@ public class Lanche {
                 ", vegetais=" + vegetais +
                 ", molho=" + molho +
                 '}';
+    }
+
+    public static class LancheBuilder {
+        private Tamanho tamanho;
+        private Pao pao;
+        private Recheio recheio;
+        private Queijo queijo;
+        private List<Vegetal> vegetais;
+        private Molho molho;
+
+        //Nao deixando chamar o construtor de fora desta classe
+        private LancheBuilder() {
+        }
+
+        public static LancheBuilder umLanche() {
+            return new LancheBuilder();
+        }
+
+        public LancheBuilder grande() {
+            this.tamanho = Tamanho.GRANDE;
+            return this;
+        }
+
+        public LancheBuilder normal() {
+            this.tamanho = Tamanho.NORMAL;
+            return this;
+        }
+
+        public LancheBuilder comPao(Pao pao) {
+            this.pao = pao;
+            return this;
+        }
+
+        public LancheBuilder comRecheio(Recheio recheio) {
+            this.recheio = recheio;
+            return this;
+        }
+
+        public LancheBuilder comQueijo(Queijo queijo) {
+            this.queijo = queijo;
+            return this;
+        }
+
+        public LancheBuilder comVegetais(Vegetal... vegetais) {
+            this.vegetais = List.of(vegetais);
+            return this;
+        }
+
+        public LancheBuilder comMolho(Molho molho) {
+            this.molho = molho;
+            return this;
+        }
+
+        public Lanche constroi() {
+            return new Lanche(this);
+        }
     }
 }
 
