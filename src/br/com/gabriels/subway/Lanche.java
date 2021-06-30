@@ -19,6 +19,10 @@ public class Lanche {
         this.molho = lanchePassoFinalBuilder.molho;
     }
 
+    public static LancheBuilder umLanche(Recheio recheio, Pao pao) {
+        return new LancheBuilder(recheio, pao);
+    }
+
     @Override
     public String toString() {
         return "Lanche{" +
@@ -35,7 +39,7 @@ public class Lanche {
         private final Recheio recheio;
         private final Pao pao;
 
-        public LancheBuilder(Recheio recheio, Pao pao) {
+        private LancheBuilder(Recheio recheio, Pao pao) {
             this.recheio = recheio;
             this.pao = pao;
         }
