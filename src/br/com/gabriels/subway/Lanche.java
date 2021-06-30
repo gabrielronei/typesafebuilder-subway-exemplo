@@ -19,6 +19,10 @@ public class Lanche {
         this.molho = lanchePassoFinalBuilder.molho;
     }
 
+    public static CriacaoLanchePassos.LancheBuilder umLanche(Recheio recheio, Pao pao) {
+        return new LancheBuilder(recheio, pao);
+    }
+
     @Override
     public String toString() {
         return "Lanche{" +
@@ -29,10 +33,6 @@ public class Lanche {
                 ", vegetais=" + vegetais +
                 ", molho=" + molho +
                 '}';
-    }
-
-    public static CriacaoLanchePassos.LancheBuilder umLanche(Recheio recheio, Pao pao) {
-        return new LancheBuilder(recheio, pao);
     }
 
     private static class LancheBuilder implements CriacaoLanchePassos.LancheBuilder {
