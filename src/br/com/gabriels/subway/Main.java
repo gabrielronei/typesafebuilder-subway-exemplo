@@ -10,7 +10,7 @@ import static br.com.gabriels.subway.Vegetal.*;
 public class Main {
     public static void main(String[] args) {
 
-        Lanche lanche = LancheBuilder.umLanche().grande()
+        Lanche lanche = Lanche.umLanche().grande()
                 .comPao(PARMESAO_OREGANO)
                 .comMolho(CHIPOTLE)
                 .comQueijo(PRATO)

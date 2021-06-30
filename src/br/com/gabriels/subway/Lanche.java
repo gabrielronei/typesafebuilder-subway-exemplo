@@ -10,13 +10,17 @@ public class Lanche {
     private final List<Vegetal> vegetais;
     private final Molho molho;
 
-    public Lanche(LancheBuilder lancheBuilder) {
+    private Lanche(LancheBuilder lancheBuilder) {
         this.tamanho = lancheBuilder.tamanho;
         this.pao = lancheBuilder.pao;
         this.recheio = lancheBuilder.recheio;
         this.queijo = lancheBuilder.queijo;
         this.vegetais = lancheBuilder.vegetais;
         this.molho = lancheBuilder.molho;
+    }
+
+    public static LancheBuilder umLanche() {
+        return new LancheBuilder();
     }
 
     @Override
@@ -41,10 +45,6 @@ public class Lanche {
 
         //Nao deixando chamar o construtor de fora desta classe
         private LancheBuilder() {
-        }
-
-        public static LancheBuilder umLanche() {
-            return new LancheBuilder();
         }
 
         public LancheBuilder grande() {
